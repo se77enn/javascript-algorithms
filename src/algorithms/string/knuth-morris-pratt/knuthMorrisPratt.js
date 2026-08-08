@@ -30,6 +30,10 @@ function buildPatternTable(word) {
  * @return {number}
  */
 export default function knuthMorrisPratt(text, word) {
+  if (word.length === 0) {
+    return 0;
+  }
+
   let textIndex = 0;
   let wordIndex = 0;
 
@@ -46,7 +50,7 @@ export default function knuthMorrisPratt(text, word) {
     } else if (wordIndex > 0) {
       wordIndex = patternTable[wordIndex - 1];
     } else {
-      wordIndex = 0;
+      // wordIndex = 0;
       textIndex += 1;
     }
   }

@@ -17,6 +17,18 @@ export default class AvlTree extends BinarySearchTree {
   }
 
   /**
+   * @param {*} value
+   * @return {boolean}
+   */
+  remove(value) {
+    // Do standard BST removal.
+    super.remove(value);
+
+    // Balance the tree starting from the root node.
+    this.balance(this.root);
+  }
+
+  /**
    * @param {BinarySearchTreeNode} node
    */
   balance(node) {
@@ -80,6 +92,12 @@ export default class AvlTree extends BinarySearchTree {
     const leftRightNode = leftNode.right;
     leftNode.setRight(null);
 
+    // Preserve leftRightNode's left subtree.
+    if (leftRightNode.left) {
+      leftNode.setRight(leftRightNode.left);
+      leftRightNode.setLeft(null);
+    }
+
     // Attach leftRightNode to the rootNode.
     rootNode.setLeft(leftRightNode);
 
@@ -101,6 +119,11 @@ export default class AvlTree extends BinarySearchTree {
     // Detach left node from rightNode.
     const rightLeftNode = rightNode.left;
     rightNode.setLeft(null);
+
+    if (rightLeftNode.right) {
+      rightNode.setLeft(rightLeftNode.right);
+      rightLeftNode.setRight(null);
+    }
 
     // Attach rightLeftNode to the rootNode.
     rootNode.setRight(rightLeftNode);

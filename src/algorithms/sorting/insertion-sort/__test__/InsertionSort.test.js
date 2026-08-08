@@ -8,10 +8,10 @@ import {
 } from '../../SortTester';
 
 // Complexity constants.
-const SORTED_ARRAY_VISITING_COUNT = 20;
-const NOT_SORTED_ARRAY_VISITING_COUNT = 101;
-const REVERSE_SORTED_ARRAY_VISITING_COUNT = 210;
-const EQUAL_ARRAY_VISITING_COUNT = 20;
+const SORTED_ARRAY_VISITING_COUNT = 19;
+const NOT_SORTED_ARRAY_VISITING_COUNT = 100;
+const REVERSE_SORTED_ARRAY_VISITING_COUNT = 209;
+const EQUAL_ARRAY_VISITING_COUNT = 19;
 
 describe('InsertionSort', () => {
   it('should sort array', () => {
@@ -24,6 +24,10 @@ describe('InsertionSort', () => {
 
   it('should do stable sorting', () => {
     SortTester.testSortStability(InsertionSort);
+  });
+
+  it('should sort negative numbers', () => {
+    SortTester.testNegativeNumbersSort(InsertionSort);
   });
 
   it('should visit EQUAL array element specified number of times', () => {

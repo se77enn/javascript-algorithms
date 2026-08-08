@@ -1,5 +1,9 @@
 # Quicksort
 
+_Read this in other languages:_
+[_简体中文_](README.zh-CN.md),
+[_Português_](README.pt-BR.md)
+
 Quicksort is a divide and conquer algorithm.
 Quicksort first divides a large array into two smaller 
 sub-arrays: the low elements and the high elements.
@@ -22,6 +26,12 @@ Animated visualization of the quicksort algorithm.
 The horizontal lines are pivot values.
 
 ![Quicksort](https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
+
+## Complexity
+
+| Name                  | Best            | Average             | Worst               | Memory    | Stable    | Comments  |
+| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
+| **Quick sort**        | n&nbsp;log(n)   | n&nbsp;log(n)       | n<sup>2</sup>       | log(n)    | No        |  Quicksort is usually done in-place with O(log(n)) stack space |
 
 ## References
 
